@@ -1,0 +1,8 @@
+{
+  "name": "Ds - DentClinic",
+  "description": "نظام ذكي متكامل لتسيير عيادة طب الأسنان، إدارة المواعيد، التذكير عبر واتساب، دليل أدوية متخصص، وطباعة الوصفات الطبية مع تصميم متجاوب لسطح المكتب والهاتف.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

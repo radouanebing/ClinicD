@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Convert sky/primary accents to High Density Clinical Teal from theme specs */
+  --color-sky-50: #f0fdfa; /* light teal */
+  --color-sky-100: #ccfbf1; /* soft teal highlight */
+  --color-sky-200: #99f6e4;
+  --color-sky-300: #5eead4;
+  --color-sky-400: #2dd4bf;
+  --color-sky-500: #0d9488; /* theme primary CTA */
+  --color-sky-600: #0f766e; /* focus & dark teal */
+  --color-sky-700: #115e59; /* premium deep teal */
+  --color-sky-800: #134e4a;
+  --color-sky-900: #204e4a;
+
+  /* Standard slate card backgrounds shifted to High Density borders */
+  --color-slate-100: #e2e8f0;
+  --color-slate-150: #cbd5e1;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #f0f4f8; /* default High Density backface */
+    color: #2d3748;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Dark Mode Sophisticated Overrides */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #090d16 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .bg-white {
+  background-color: #101725 !important;
+}
+
+.dark .text-slate-800,
+.dark .text-slate-900,
+.dark .text-slate-850,
+.dark .text-[#2d3748] {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-650,
+.dark .text-slate-600,
+.dark .text-[#4a5568] {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-150,
+.dark .border-gray-200 {
+  border-color: #1e293b !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: #1e293b !important;
+}
+
+.dark .bg-slate-50\/50 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: #334155 !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+.dark aside {
+  background-color: #0b0f19 !important;
+  border-left-color: #1e293b !important;
+}
+
+.dark nav.md\:hidden {
+  background-color: #101725 !important;
+  border-top-color: #1e293b !important;
+}
+
+/* Custom styles for professional prescription printing */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-card {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
+
