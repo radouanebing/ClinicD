@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import fs from "fs";
-import { createServer as createViteServer } from "vite";
 import sqlite3 from "sqlite3";
 import { open, Database } from "sqlite";
 import { ClinicData, DentalMedicationInfo, Patient, Appointment, Prescription, TodoTask, WhatsappSettings } from "./src/types";
@@ -721,6 +720,7 @@ async function startServer() {
 
   // Serve static assets or route via Vite in dev
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa"
